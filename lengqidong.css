@@ -1,0 +1,58 @@
+@media screen and (min-width:992px){
+	
+		
+*{
+	padding: 0px;
+	margin:0px;
+}
+    	body{
+    		width: 360px;
+    		height: 640px;
+    		margin: auto;
+    	}
+
+    	#pic{
+       		width:100%;
+    		height:100%;
+	    	
+	    	background-image: url(lengqidong.png);
+	    	
+	    	background-repeat: no-repeat;
+	    	background-size: 100% 100%;
+    	}
+}
+	
+
+@media screen and (max-width:992px){
+	*{
+	padding: 0px;
+	margin:0px;
+	border: 0px;
+}
+    	
+    	html{
+    		width:100%;
+    		height: 100%;
+    		
+    	}
+    	
+    	body{
+    		width:100%;
+    		height: 100%;
+            margin: auto;
+    	}
+    	
+    	#pic{
+       		width:100%;
+    		height:100%;
+	    	
+	    	background-image: url(lengqidong.png);
+	    	
+	    	background-repeat: no-repeat;
+	    	background-size: 100% 100%;
+    	}
+	}
+
+
+
+
