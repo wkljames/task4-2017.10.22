@@ -4,38 +4,15 @@ var pm=parseInt(pm1);
 var ss1=sessionStorage.getItem("ss");
 var ss=parseInt(ss1);
 var daypass=sessionStorage.getItem("dp");
+
 var point=sessionStorage.getItem("po");
 
-var daypass;
 
-if(point==1&&daypass){
+
+if(daypass){
 	var daypass1=sessionStorage.getItem("dp");
 	if(daypass1>0){
-	var dp1=parseInt(daypass1)-1;
-	$(document).ready(function(){
-		for(var i=0;i<=dp1;i++){
-			var da=new Array("二","三","四","五","六","七","八","九","十");
-			$("#order").before($("<div class='day'>第"+da[i]+"天</div>"));
-		}
-	});
-	}
-}
-
-if(point==3){
-	if(daypass){
-		daypass++;	
-		
-	}else{
-		daypass=1;
-		
-	}
-
-	sessionStorage.setItem("dp",daypass);
-	var point=0;
-	sessionStorage.setItem("po",point);
 	
-
-	var daypass1=sessionStorage.getItem("dp");
 	var dp1=parseInt(daypass1)-1;
 	$(document).ready(function(){
 		for(var i=0;i<=dp1;i++){
@@ -43,15 +20,14 @@ if(point==3){
 			$("#order").before($("<div class='day'>第"+da[i]+"天</div>"));
 		}
 	});
+	}
 }
-
-
 
 
 var point=sessionStorage.getItem("po");
 $(document).ready(function() {
 	$("#backTo").click(function(){
-		window.location.href="assign.html";
+		window.location.href="judge.html";
 	});
 });
 
@@ -68,11 +44,17 @@ $(document).ready(function() {
 });
 
 
-
 if(point==1){
 	$(document).ready(function() {
 		$("#tOne").children("a").children(".blue_tag").css("background","rgb(146,183,164)");
 		$("#tOne").children(".blue_arr").children(".jiantou").attr('src','bluearrb.png');
+	});
+}else if(point==2){
+	$(document).ready(function() {
+		$("#tOne").children("a").children(".blue_tag").css("background","rgb(146,183,164)");
+		$("#tOne").children(".blue_arr").children(".jiantou").attr('src','bluearrb.png');
+		$("#tTwo").children("a").children(".blue_tag").css("background","rgb(146,183,164)");
+		$("#tTwo").children(".blue_arr").children(".jiantou").attr('src','bluearrb.png');
 	});
 }else if(point==3){
 	$(document).ready(function() {
@@ -86,6 +68,7 @@ if(point==1){
 }else{
 	var point=0;
 }
+
 
 var blue_arr=document.getElementsByClassName("blue_arr");
 var blue_tag=document.getElementsByClassName("blue_tag");
@@ -116,7 +99,8 @@ $(document).ready(function() {
 		}else if(point==3&&x=="tFour"){
 			$(this).children("a").children(".blue_tag").css("background","rgb(146,183,164)");
 			$(this).children(".blue_arr").children(".jiantou").attr('src','bluearrb.png');
-			
+			$("#tip").find("p").html("请投票");
+			err();
 		
 			point++;
 		}else{
@@ -127,7 +111,7 @@ $(document).ready(function() {
 });
 
 function start(){
-		if(point==1){
+		if(point>=1){
 			$("#tOne").children("a").children(".blue_tag").css("background","rgb(146,183,164)");
 			$("#tOne").children(".blue_arr").children(".jiantou").attr('src','bluearrb.png');
 			var c=sessionStorage.getItem("s");
@@ -143,8 +127,14 @@ function dispear(){
 	var dark=document.getElementById("dark");
 	dark.style.opacity=0;
 	dark.style.zIndex=-1;
-	if(point==3){
+	if(point==4){
 		setTimeout("window.location.href='vote.html'",1000);
+		var dp1=sessionStorage.getItem("dp");
+		dp1++;
+		sessionStorage.setItem("dp",dp1);
+		var po=sessionStorage.getItem("po");
+		po=0;
+		sessionStorage.setItem("po",po);
 	}
 }
 

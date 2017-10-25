@@ -36,7 +36,7 @@ var tous=tous1.split('-');
 $(document).ready(function(){
 	var dp1=sessionStorage.getItem("dp");
 	var dp=parseInt(dp1);
-	for(var i=0;i<dp;i++){
+	for(var i=0;i<dp-1;i++){
 		var j=i+2;
 		$('#fake').before($("<div class='card'><p>第"+j+"天</p><p>黑夜："+shan[i+2]+"号玩家被杀死了，真实身份是平民</p><p>白天："+toun[i+2]+"号玩家被投死了，真实身份是"+tous[i+2]+"</p></div>"));
 	}

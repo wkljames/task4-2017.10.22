@@ -73,8 +73,8 @@ $(document).ready(function() {
 		
 		var g1=$(this).children(".cIdent").html();
 		var dpp=sessionStorage.getItem("dp");
-		if(!dpp){
-			
+		 dpp-=0;
+		if(dpp==1){
 		sessionStorage.setItem("toun0",w);//记录投人num，用于最后复盘（只是第一天）
 		sessionStorage.setItem("tous0",g1);//记录杀投人id，用于最后复盘（只是第一天）
 		}

@@ -1,3 +1,6 @@
+
+
+
 $(document).ready(function() {
 	$("#backTo").click(function(){
 		window.location.href="assign.html";
@@ -35,14 +38,24 @@ function show(){
 var po1=sessionStorage.getItem("po");
 
 if(po1){
+	if(po1==0){
 	var c1=sessionStorage.getItem("c");
 	var c2=c1.split('-');
+	
+}else{
+	var c1=sessionStorage.getItem("b");
+	var c2=c1.split('-');
+	
+	}
 		
 		$(document).ready(function(){
 			for(var j=0;j<c2.length;j++){
 				$("#card"+c2[j]).children(".cIdent").css("background","rgb(146,183,165)");//jq选择器中加变量
 			}
 		});	
+	$(document).ready(function(){
+		$("#footer").html("返回法官台本");
+	});
 	var pm1=sessionStorage.getItem("pm");
 	var pm=parseInt(pm1);
 	var ss1=sessionStorage.getItem("ss");
